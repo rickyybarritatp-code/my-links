@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Link Dashboard</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background-color: #f4f7f6;
+            color: #333;
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .link-card {
+            background: white;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .link-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            color: #2c3e50;
+        }
+        .link-url {
+            font-size: 0.9em;
+            color: #7f8c8d;
+            word-break: break-all;
+            text-decoration: none;
+        }
+        .link-url:hover {
+            text-decoration: underline;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: 5px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 6px 12px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.85em;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        button.copied {
+            background-color: #2ecc71;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>🔗 My Link Dashboard</h1>
+
+    <div class="link-card">
+        <div class="link-title">Canada Post - Return Label Details</div>
+        <a class="link-url" href="https://www.canadapost-postescanada.ca/pr-rc/en/get-return-label/details?id=PR211701" target="_blank">https://www.canadapost-postescanada.ca/pr-rc/en/get-return-label/details?id=PR211701</a>
+        <div class="actions">
+            <button onclick="copyToClipboard('https://www.canadapost-postescanada.ca/pr-rc/en/get-return-label/details?id=PR211701', this)">Copy Link</button>
+        </div>
+    </div>
+
+    <div class="link-card">
+        <div class="link-title">Ffern - Nearest Drop-off Point</div>
+        <a class="link-url" href="https://ffern.co/faq/where-is-my-nearest-drop-off-point/" target="_blank">https://ffern.co/faq/where-is-my-nearest-drop-off-point/</a>
+        <div class="actions">
+            <button onclick="copyToClipboard('https://ffern.co/faq/where-is-my-nearest-drop-off-point/', this)">Copy Link</button>
+        </div>
+    </div>
+
+    <div class="link-card">
+        <div class="link-title">Ffern - Return Window FAQ</div>
+        <a class="link-url" href="https://ffern.co/faq/how-long-do-i-have-to-return-my-bottle/" target="_blank">https://ffern.co/faq/how-long-do-i-have-to-return-my-bottle/</a>
+        <div class="actions">
+            <button onclick="copyToClipboard('https://ffern.co/faq/how-long-do-i-have-to-return-my-bottle/', this)">Copy Link</button>
+        </div>
+    </div>
+
+    <div class="link-card">
+        <div class="link-title">Ffern - Spring 26 Release</div>
+        <a class="link-url" href="https://ffern.co/releases/spring-26" target="_blank">https://ffern.co/releases/spring-26</a>
+        <div class="actions">
+            <button onclick="copyToClipboard('https://ffern.co/releases/spring-26', this)">Copy Link</button>
+        </div>
+    </div>
+
+    <div class="link-card">
+        <div class="link-title">Ffern - Login</div>
+        <a class="link-url" href="https://ffern.co/login" target="_blank">https://ffern.co/login</a>
+        <div class="actions">
+            <button onclick="copyToClipboard('https://ffern.co/login', this)">Copy Link</button>
+        </div>
+    </div>
+
+    <div class="link-card">
+        <div class="link-title">Ffern - Portal</div>
+        <a class="link-url" href="https://ffern.co/portal" target="_blank">https://ffern.co/portal</a>
+        <div class="actions">
+            <button onclick="copyToClipboard('https://ffern.co/portal', this)">Copy Link</button>
+        </div>
+    </div>
+
+    <div class="link-card">
+        <div class="link-title">Ffern - Delivery Countries FAQ</div>
+        <a class="link-url" href="https://ffern.co/faq/delivery#what-countries-do-you-deliver-fragrances-to" target="_blank">https://ffern.co/faq/delivery#what-countries-do-you-deliver-fragrances-to</a>
+        <div class="actions">
+            <button onclick="copyToClipboard('https://ffern.co/faq/delivery#what-countries-do-you-deliver-fragrances-to', this)">Copy Link</button>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(text, button) {
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.innerText;
+                button.innerText = "Copied!";
+                button.classList.add("copied");
+                setTimeout(() => {
+                    button.innerText = originalText;
+                    button.classList.remove("copied");
+                }, 1500);
+            }).catch(err => {
+                console.error('Failed to copy: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
