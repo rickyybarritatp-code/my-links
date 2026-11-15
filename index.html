@@ -157,6 +157,14 @@
         </div>
     </div>
 
+    <div class="link-card">
+        <div class="link-title">GDPR Unsubscribe</div>
+        <a class="link-url" href="https://ffern.co/unsubscribe/email/%7B%7BuserUuid%7D%7D" target="_blank">https://ffern.co/unsubscribe/email/%7B%7BuserUuid%7D%7D</a>
+        <div class="actions">
+            <button onclick="copyToClipboard('https://ffern.co/unsubscribe/email/%7B%7BuserUuid%7D%7D', this)">Copy Link</button>
+        </div>
+    </div>
+
     <script>
         function copyToClipboard(text, button) {
             navigator.clipboard.writeText(text).then(() => {
